@@ -1,0 +1,30 @@
+.bg-addtime{
+    background-color: #F6EEE0;
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    height: 870px;
+}
+.card-addtime{
+    width: 60%;
+    height: 50%;
+    background-color: #D1E7E0;
+    border-radius: 20px;
+    font-size: 22px;
+}
+
+#savebutton{
+    height: 40px;
+    width: 150px;
+    background-color: #E51D45;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input.relay-checkbox{
+    width: 18px;
+    height: 18px;
+    margin: 5px;
+}

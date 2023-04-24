@@ -1,0 +1,59 @@
+version: '3.0'
+
+services:
+  smart-farm-web:
+    build:
+      context: ./smart-farm-web/
+      dockerfile: ./Dockerfile
+    container_name: smart-farm-web
+    # image: "pondhub2013/smart-farm-web"
+    ports:
+      - 80:80
+    networks: 
+      - smart-farm-network
+  
+  smart-farm-api:
+    build:
+      context: ./smart-farm-api/
+      dockerfile: ./Dockerfile
+    container_name: smart-farm-api
+    # image: "pondhub2013/smart-farm-api"
+    ports:
+      - 8080:80
+    networks: 
+      - smart-farm-network
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+    networks: 
+      - smart-farm-network
+    volumes:
+      - ./data/db:/data/db
+      - ./backup:/backup
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    networks: 
+      - smart-farm-network
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_SERVER: mongo
+      # ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+    depends_on:
+      - mongo
+
+networks:
+  smart-farm-network:
+    driver: bridge

@@ -1,0 +1,31 @@
+Run: docker-compose up --build
+Open: http://localhost:8080/swagger/index.html
+Use: POST on each API
+
+/////////////////Relay Node//////////////////////////
+[
+{
+    "id": "",
+    "relayId": "1",
+    "turnOn": true
+}
+,
+{
+  "id": "",
+  "relayId": "2",
+  "turnOn": true
+}
+,
+{
+  "id": "",
+  "relayId": "3",
+  "turnOn": true
+}
+,
+{
+  "id": "",
+  "relayId": "4",
+  "turnOn": false
+}
+
+]

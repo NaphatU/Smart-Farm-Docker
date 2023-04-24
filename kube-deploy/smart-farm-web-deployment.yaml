@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: smart-farm-web
+  name: smart-farm-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      io.kompose.service: smart-farm-web
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.network/smart-farm-network: "true"
+        io.kompose.service: smart-farm-web
+    spec:
+      containers:
+        - image: pondhub2013/smart-farm-web
+          name: smart-farm-web
+          ports:
+            - containerPort: 80
+          resources: {}
+      restartPolicy: Always
+status: {}

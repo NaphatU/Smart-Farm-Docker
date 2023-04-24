@@ -1,0 +1,29 @@
+.bg-time{
+    background-color: #F6EEE0;
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    height: 870px;
+}
+
+
+#add-time{
+    
+    width: 55px;
+    height: 40px;
+    background-color: #41A8E2;
+    color: #E5E5E5;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    float: right;
+}
+
+#cases-time tr:nth-child(even) {
+    font-weight: bold;
+    background-color: #F5FFFA;
+}
+#cases-time tr:nth-child(odd) {
+    font-weight: bold;
+    background-color: #F8F8F8;
+}

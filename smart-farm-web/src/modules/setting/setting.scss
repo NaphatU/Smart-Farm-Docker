@@ -1,0 +1,23 @@
+.bg-setting{
+    background-color: #F6EEE0;
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    height: 870px;
+}
+
+.card-setting{
+    width: 50%;
+    height: 50%;
+    font-size: 25px;
+}
+
+.card-setting input[type="number"],
+.card-setting input[type="text"]{
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-size: 20px;
+}
